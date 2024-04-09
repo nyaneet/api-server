@@ -14,5 +14,5 @@ COPY config.yaml ./config.yaml
 RUN mkdir ./target
 # make and run the Debian package
 RUN ./make_package
-RUN apt install ./target/api-server_0.1.14_amd64.deb
+RUN ARCH="$(dpkg --print-architecture)"; apt install ./target/api-server_0.1.14_${ARCH}.deb
 CMD api-server
