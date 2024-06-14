@@ -24,7 +24,7 @@ use crate::{
 };
 
 fn main() {
-    DebugSession::init(LogLevel::Debug, Backtrace::Short);
+    DebugSession::init(LogLevel::Error, Backtrace::Short);
     let cli = Cli::parse();
     debug!("starting api server...");
     let path = cli.config.map_or_else(
