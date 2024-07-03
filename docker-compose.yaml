@@ -1,7 +1,6 @@
-version: "3.0"
-
 networks:
   api-server:
+
 
 services:
   db:
@@ -21,8 +20,14 @@ services:
       - api-server
 
   api:
-    build: .
+    build: ./api-server
     ports:
       - 8080:8080
     networks:
       - api-server
+
+  client:
+    build: ./client
+    environment:
+      DISPLAY: ${DISPLAY}
+    network_mode: host
