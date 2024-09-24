@@ -1,10 +1,8 @@
 -- Давление ветра p_v и добавка на порывистость m 
 -- в зависимости от района плавания судна,
 -- Табл. 2.1.4.1
-DROP TABLE IF EXISTS navigation_area CASCADE;
-
 CREATE TABLE if not exists navigation_area (
-  id INT NOT NULL,
+  id INT GENERATED ALWAYS AS IDENTITY,
   area TEXT NOT NULL,
   p_v FLOAT8 NOT NULL,
   m FLOAT8 NOT NULL,
@@ -16,11 +14,11 @@ CREATE TABLE if not exists navigation_area (
 );
 
 INSERT INTO navigation_area
-  (id, area, p_v, m)
+  (area, p_v, m)
 VALUES
-  (1, 'Unlimited', 504, 0.5),
-  (2, 'R1', 353, 0.5),
-  (3, 'R2', 252, 0.52),
-  (4, 'R2-RSN', 252, 0.52),
-  (5, 'R2-RSN(4,5)', 166, 0.54),
-  (6, 'R3-RSN', 119, 0.55);
+  ('Unlimited', 504, 0.5),
+  ('R1', 353, 0.5),
+  ('R2', 252, 0.52),
+  ('R2-RSN', 252, 0.52),
+  ('R2-RSN(4,5)', 166, 0.54),
+  ('R3-RSN', 119, 0.55);
