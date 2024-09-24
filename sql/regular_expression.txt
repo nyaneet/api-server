@@ -56,7 +56,7 @@ select
     values.actual_value as result,
     head.math_relation as relation,
     values.limit_value as target,
-    unit.symbol_rus 
+    unit.symbol_rus as unit
 from 
     criterion as head
 join 
