@@ -9,13 +9,13 @@ SELECT
     c.ship_id AS "ship_id", -- ID of the ship
     c.project_id AS "project_id", -- ID of the project
     c.category_id AS "category_id", -- ID of the cargo_category entry, default value is 10 - 'cargo'
-    cs.bound_x1 AS "bound_x1", -- Leftmost coordinate of the slot along the longitudinal axis, measured in meters from midship
-    cs.bound_x2 AS "bound_x2", -- Rightmost coordinate of the slot along the longitudinal axis, measured in meters from midship
-    cs.bound_y1 AS "bound_y1", -- Leftmost coordinate of the slot along the transversal axis, measured in meters
-    cs.bound_y2 AS "bound_y2", -- Rightmost coordinate of the slot along the transversal axis, measured in meters
-    cs.bound_z1 AS "bound_z1", -- Leftmost coordinate of the slot along the vertical axis, measured in meters
-    cs.bound_z2 AS "bound_z2", -- Rightmost coordinate of the slot along the vertical axis, measured in meters
-    (cs.bound_x1 + (cs.bound_x2 - cs.bound_x1) / 2) AS "mass_shift_x", -- Cargo center of gravity along the longitudinal axis, measured in meters
+    cs.bound_x1 AS "bound_x1", -- Leftmost coordinate of the container along the longitudinal axis, measured in meters from midship
+    cs.bound_x2 AS "bound_x2", -- Rightmost coordinate of the container along the longitudinal axis, measured in meters from midship
+    cs.bound_y1 AS "bound_y1", -- Leftmost coordinate of the container along the transversal axis, measured in meters
+    cs.bound_y2 AS "bound_y2", -- Rightmost coordinate of the container along the transversal axis, measured in meters
+    cs.bound_z1 AS "bound_z1", -- Leftmost coordinate of the container along the vertical axis, measured in meters
+    cs.bound_z2 AS "bound_z2", -- Rightmost coordinate of the container along the vertical axis, measured in meters
+    (cs.bound_x1 + (cs.bound_x2 - cs.bound_x1) / 2) AS "mass_shift_x", -- Cargo center of gravity along the longitudinal axis, measured in meters from midship
     (cs.bound_y1 + (cs.bound_y2 - cs.bound_y1) / 2) AS "mass_shift_y", -- Cargo center of gravity along the transversal axis, measured in meters
     (cs.bound_z1 + (cs.bound_z2 - cs.bound_z1) / 2) AS "mass_shift_z", -- Cargo center of gravity along the vertical axis, measured in meters
     cs.tier_number >= 80 AS "is_on_deck" -- Indicator of whether the cargo is on deck, true - yes, false - no
