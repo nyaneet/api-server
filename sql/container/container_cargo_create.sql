@@ -22,5 +22,5 @@ SELECT
 FROM
     container AS c
     JOIN container_slot AS cs ON c.id = cs.container_id
-ORDER BY 
+ORDER BY
     cs.id;
