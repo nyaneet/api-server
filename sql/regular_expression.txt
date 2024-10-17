@@ -176,4 +176,27 @@ update compartment set use_max_m_f_s=true where space_id=39;
             WHERE 
                 s.id=1;
 
+        SELECT 
+            c.id AS id,
+            c.mass AS mass,
+            cgc.key::TEXT AS general_category,
+            c.bound_x1 AS bound_x1,
+            c.bound_x2 AS bound_x2,
+            c.bound_y1 AS bound_y1,
+            c.bound_y2 AS bound_y2,
+            c.bound_z1 AS bound_z1,
+            c.bound_z2 AS bound_z2,
+            c.mass_shift_x AS mass_shift_x,
+            c.mass_shift_y AS mass_shift_y,
+            c.mass_shift_z AS mass_shift_z,
+            c.is_on_deck AS is_on_deck 
+        FROM 
+            container_cargo AS c
+        JOIN 
+            cargo_category AS cc ON c.category_id = cc.id
+        JOIN 
+            cargo_general_category AS cgc ON cc.general_category_id = cgc.id
+        WHERE 
+            c.ship_id=1;
+
 
