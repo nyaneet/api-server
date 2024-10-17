@@ -23,6 +23,9 @@ UPDATE compartment SET mass = 0 WHERE ship_id = 1 AND space_id = 43; -- Сточ
 UPDATE compartment SET mass = 1.80 WHERE ship_id = 1 AND space_id = 47;  -- Экипаж и багаж
 UPDATE compartment SET mass = 1.2 WHERE ship_id = 1 AND space_id = 48;   -- Провизия 
 
+update bulkhead_place set bulkhead_id=1 where id=3; -- Зерновая переборка 1 28 шп.
+update bulkhead_place set bulkhead_id=2 where id=4; -- Зерновая переборка 2 27 шп.
+
 -- Балласт
 UPDATE compartment SET mass = 60.3 WHERE ship_id = 1 AND space_id = 2;      -- Форпик Пр.Б
 UPDATE compartment SET mass = 60.3 WHERE ship_id = 1 AND space_id = 3;      -- Форпик ЛБ
@@ -46,4 +49,5 @@ UPDATE compartment SET mass = 104.8 WHERE ship_id = 1 AND space_id = 20;     -- 
 UPDATE compartment SET mass = 104.8 WHERE ship_id = 1 AND space_id = 21;     -- Балласт 7 Пр.Б
 UPDATE compartment SET mass = 93.2 WHERE ship_id = 1 AND space_id = 22;     -- Балласт 7 ЛБ
 UPDATE compartment SET mass = 97.5 WHERE ship_id = 1 AND space_id = 23;     -- Балласт 7 ДД
+
 -- TODO Контейнеры
