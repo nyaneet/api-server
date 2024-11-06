@@ -5,7 +5,7 @@ CREATE VIEW
     container_cargo AS
 SELECT
     cs.id AS "id", -- ID of the container cargo
-    c.mass AS "mass", -- Mass of the cargo, measured in tons
+    c.gross_mass AS "mass", -- Mass of the cargo, measured in tons
     c.ship_id AS "ship_id", -- ID of the ship
     c.project_id AS "project_id", -- ID of the project
     c.category_id AS "category_id", -- ID of the cargo_category entry, default value is 10 - 'cargo'

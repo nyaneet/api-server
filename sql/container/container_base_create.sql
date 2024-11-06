@@ -6,14 +6,21 @@ CREATE TABLE
 		id INT GENERATED ALWAYS AS IDENTITY, -- ID of the container, unique identifier
 		project_id INT, -- ID of the project
 		ship_id INT NOT NULL, -- ID of the ship
-		mass FLOAT8 NOT NULL, -- Mass of the container, measured in tons
 		iso_code TEXT NOT NULL, -- Size code of the container (TODO: add ref to ISO)
 		category_id INT NOT NULL DEFAULT 13, -- ID of the cargo_category entry; Default value is 13 - 'container_cargo'
-		pol_code TEXT, -- TODO
-		pod_code TEXT, -- TODO
+		serial_code INT NOT NULL DEFAULT 0, -- Serial code of the container
+		type_code TEXT NOT NULL DEFAULT 'GP', -- Type code of the container
+		owner_code TEXT NOT NULL DEFAULT 'OWN', -- Owner code of the container
+		check_digit INT NOT NULL DEFAULT 0, -- Check digit of the container
+		pol_waypoint_id INT, -- ID of the port of loading waypoint entry
+		pod_waypoint_id INT, -- ID of the port of departure waypoint entry
+		max_gross_mass FLOAT8 NOT NULL, -- Maximum gross mass of the container, measured in tons
+		gross_mass FLOAT8 NOT NULL, --  Gross mass of the container, measured in tons
+		tare_mass FLOAT8 NOT NULL, -- Tare mass of the container, measured in tons
 		CONSTRAINT container_pk PRIMARY KEY (id),
 		CONSTRAINT container_category_fk FOREIGN KEY (category_id) REFERENCES cargo_category (id),
-		CONSTRAINT container_mass_check CHECK (mass >= 0.0)
+		CONSTRAINT container_pol_waypoint_fk FOREIGN KEY (pol_waypoint_id) REFERENCES waypoint (id),
+		CONSTRAINT container_pod_waypoint_fk FOREIGN KEY (pod_waypoint_id) REFERENCES waypoint (id)
 	);
 
 -- Relation to store container slots
