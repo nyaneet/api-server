@@ -1,0 +1,142 @@
+[2024-11-11 10:06:21.669] [INFO] main: starting up
+[2024-11-11 10:06:21.770] [INFO] args: read from stdin: {"api-host":"10.131.145.109","api-port":8080,"message":"testtesttest"}
+[2024-11-11 10:06:21.770] [INFO] args: sss-computing-strength111 io::stdin(): {"api-host":"10.131.145.109","api-port":8080,"message":"testtesttest"}
+[2024-11-11 10:06:21.770] [INFO] args: sss-computing-strength111 io::stdin(): "testtesttest"
+[2024-11-11 10:06:21.781] [INFO] data/api_server: input_api_server read begin
+[2024-11-11 10:07:25.801] [INFO] main: starting up
+[2024-11-11 10:07:25.901] [INFO] args: read from stdin: {"api-host":"10.131.145.109","api-port":8080,"message":"testtesttest"}
+[2024-11-11 10:07:25.901] [INFO] args: sss-computing-strength111 io::stdin(): {"api-host":"10.131.145.109","api-port":8080,"message":"testtesttest"}
+[2024-11-11 10:07:25.901] [INFO] args: sss-computing-strength111 io::stdin(): "testtesttest"
+[2024-11-11 10:07:25.912] [INFO] data/api_server: input_api_server read begin
+[2024-11-11 10:11:23.218] [INFO] main: starting up
+[2024-11-11 10:11:23.319] [INFO] args: read from stdin: {"api-host":"10.131.145.109","api-port":8080,"message":"testtesttest"}
+[2024-11-11 10:11:23.319] [INFO] args: json: {"api-host":"10.131.145.109","api-port":8080,"message":"testtesttest"}
+[2024-11-11 10:11:23.328] [INFO] main: args host:"10.131.145.109" port:8080
+[2024-11-11 10:11:23.328] [INFO] data/api_server: input_api_server read begin
+[2024-11-11 10:19:32.184] [INFO] main: starting up
+[2024-11-11 10:19:32.285] [INFO] args: read from stdin: {"api-host":"10.131.145.109","api-port":8080,"message":"testtesttest"}
+[2024-11-11 10:19:32.285] [INFO] args: io::stdin(): {"api-host":"10.131.145.109","api-port":8080,"message":"testtesttest"}
+[2024-11-11 10:19:32.295] [INFO] main: args host:"10.131.145.109" port:8080
+[2024-11-11 10:19:32.295] [INFO] data/api_server: input_api_server read begin
+[2024-11-11 10:19:35.869] [INFO] main: starting up
+[2024-11-11 10:19:35.969] [INFO] args: read from stdin: {"api-host":"10.131.145.109","api-port":8080,"message":"testtesttest"}
+[2024-11-11 10:19:35.969] [INFO] args: io::stdin(): {"api-host":"10.131.145.109","api-port":8080,"message":"testtesttest"}
+[2024-11-11 10:19:35.980] [INFO] main: args host:"10.131.145.109" port:8080
+[2024-11-11 10:19:35.980] [INFO] data/api_server: input_api_server read begin
+[2024-11-11 10:20:04.134] [INFO] main: starting up
+[2024-11-11 10:20:04.234] [INFO] args: read from stdin: {"api-host":"10.131.145.109","api-port":"8080","message":"testtesttest"}
+[2024-11-11 10:20:04.234] [INFO] args: io::stdin(): {"api-host":"10.131.145.109","api-port":"8080","message":"testtesttest"}
+[2024-11-11 10:20:04.244] [INFO] main: args host:"10.131.145.109" port:"8080"
+[2024-11-11 10:20:04.244] [INFO] data/api_server: input_api_server read begin
+[2024-11-11 10:20:20.321] [INFO] main: starting up
+[2024-11-11 10:20:20.421] [INFO] args: read from stdin: {"message":"testtesttest"}
+[2024-11-11 10:20:20.422] [INFO] args: io::stdin(): {"message":"testtesttest"}
+[2024-11-11 10:20:20.431] [INFO] main: reply: {"status":"failed","message":"FromString: Parse param error: no api-host"}
+[2024-11-11 10:31:29.933] [INFO] main: starting up
+[2024-11-11 10:31:30.034] [INFO] args: read from stdin: {"api-host":"10.131.145.109","api-port":8080,"message":"testtesttest"}
+[2024-11-11 10:31:30.044] [INFO] main: reply: {"status":"failed","message":"Serde: missing field `host` at line 1 column 70"}
+[2024-11-11 10:32:04.639] [INFO] main: starting up
+[2024-11-11 10:32:04.740] [INFO] args: read from stdin: {"api-host":"10.131.145.109","api-port":8080,"message":"testtesttest"}
+[2024-11-11 10:32:04.749] [INFO] main: reply: {"status":"failed","message":"Serde: missing field `host` at line 1 column 70"}
+[2024-11-11 10:34:08.750] [INFO] main: starting up
+[2024-11-11 10:34:08.850] [INFO] args: read from stdin: {"api-host":"10.131.145.109","api-port":8080,"message":"testtesttest"}
+[2024-11-11 10:34:08.850] [INFO] args: io::stdin(): Message { host: "10.131.145.109", port: 8080, message: "testtesttest" }
+[2024-11-11 10:34:08.860] [INFO] main: args host:10.131.145.109 port:8080
+[2024-11-11 10:34:08.860] [INFO] data/api_server: input_api_server read begin
+[2024-11-11 10:34:13.547] [INFO] data/api_server: input_api_server read ok
+[2024-11-11 10:34:13.547] [INFO] data/structs/result: result parse begin
+[2024-11-11 10:34:13.549] [INFO] data/structs/result: result parse ok
+[2024-11-11 10:34:13.550] [INFO] data/structs/check_result: result check begin
+[2024-11-11 10:34:13.551] [INFO] data/structs/check_result: result check ok
+[2024-11-11 10:34:13.551] [INFO] data/structs/result: result check ok
+[2024-11-11 10:34:13.551] [INFO] strength/mass: 	 Mass ballast:0, stores:286.2546, bulkhead:0
+            cargo:0, deadweight:286.2546, lightship:2044.1000000000004,
+            icing:0, wetting:0 sum:2330.3546000000006
+[2024-11-11 10:34:13.551] [INFO] strength/mass: 	 Mass values:[185.6748848949311, 312.9851924207509, 234.26238934882107, 83.38382259069215, 72.48436350748834, 72.49186071627264, 72.81498348421793, 72.814983484218, 72.8149834842179, 72.8149834842179, 72.814983484218, 72.81498348421782, 72.814983484218, 72.81498348421788, 75.33611376318315, 97.07947438982278, 141.93145040750068, 203.49367677739008, 172.13685402536785, 96.57464928403576] 
+[2024-11-11 10:34:13.559] [INFO] data/api_server: send_strenght_data begin
+[2024-11-11 10:34:13.675] [INFO] data/api_server: send_strenght_data end
+[2024-11-11 10:34:13.693] [INFO] data/api_server: send_stability_diagram begin
+[2024-11-11 10:34:13.807] [INFO] data/api_server: send_stability_diagram end
+[2024-11-11 10:34:13.808] [INFO] stability/criterion/computer: CriterionComputer begin
+[2024-11-11 10:34:13.808] [INFO] stability/criterion/stability: Criterion begin
+[2024-11-11 10:34:13.816] [INFO] stability/criterion/stability: Criterion end
+[2024-11-11 10:34:13.816] [INFO] stability/criterion/computer: CriterionComputer end
+[2024-11-11 10:34:13.816] [INFO] stability/criterion/stability: Criterion begin
+[2024-11-11 10:34:13.816] [INFO] stability/criterion/stability: Criterion end
+[2024-11-11 10:34:13.816] [INFO] data/api_server: send_draft_mark begin
+[2024-11-11 10:34:13.926] [INFO] data/api_server: send_draft_mark end
+[2024-11-11 10:34:13.927] [INFO] data/api_server: send_stability_data begin
+[2024-11-11 10:34:14.045] [INFO] data/api_server: send_stability_data end
+[2024-11-11 10:34:14.046] [INFO] data/api_server: send_parameters_data begin
+[2024-11-11 10:34:14.171] [INFO] data/api_server: send_parameters_data end
+[2024-11-11 10:34:14.171] [INFO] main: read data:	4.690779044s
+[2024-11-11 10:34:14.171] [INFO] main: calculate:	620.707816ms
+[2024-11-11 10:34:14.172] [INFO] main: reply: {"status":"ok","message":null}
+[2024-11-11 11:00:19.829] [INFO] main: starting up
+[2024-11-11 11:00:19.929] [INFO] args: read from stdin: {"api-address":{"host":"10.131.145.109","port":8080},"params":{"project-id":null,"ship-id":1}}
+[2024-11-11 11:00:19.929] [INFO] args: io::stdin(): Message { address: ApiAddress { host: "10.131.145.109", port: 8080 }, params: Params { ship_id: 1, project_id: None } }
+[2024-11-11 11:00:19.939] [INFO] main: args host:10.131.145.109 port:8080
+[2024-11-11 11:00:19.939] [INFO] data/api_server: input_api_server read begin
+[2024-11-11 11:00:24.639] [INFO] data/api_server: input_api_server read ok
+[2024-11-11 11:00:24.639] [INFO] data/structs/result: result parse begin
+[2024-11-11 11:00:24.641] [INFO] data/structs/result: result parse ok
+[2024-11-11 11:00:24.643] [INFO] data/structs/check_result: result check begin
+[2024-11-11 11:00:24.643] [INFO] data/structs/check_result: result check ok
+[2024-11-11 11:00:24.643] [INFO] data/structs/result: result check ok
+[2024-11-11 11:00:24.643] [INFO] strength/mass: 	 Mass ballast:0, stores:286.2546, bulkhead:0
+            cargo:0, deadweight:286.2546, lightship:2044.1000000000004,
+            icing:0, wetting:0 sum:2330.3546000000006
+[2024-11-11 11:00:24.643] [INFO] strength/mass: 	 Mass values:[185.6748848949311, 312.9851924207509, 234.26238934882107, 83.38382259069215, 72.48436350748834, 72.49186071627264, 72.81498348421793, 72.814983484218, 72.8149834842179, 72.8149834842179, 72.814983484218, 72.81498348421782, 72.814983484218, 72.81498348421788, 75.33611376318315, 97.07947438982278, 141.93145040750068, 203.49367677739008, 172.13685402536785, 96.57464928403576] 
+[2024-11-11 11:00:24.655] [INFO] data/api_server: send_strenght_data begin
+[2024-11-11 11:00:24.770] [INFO] data/api_server: send_strenght_data end
+[2024-11-11 11:00:24.781] [INFO] data/api_server: send_stability_diagram begin
+[2024-11-11 11:00:24.890] [INFO] data/api_server: send_stability_diagram end
+[2024-11-11 11:00:24.890] [INFO] stability/criterion/computer: CriterionComputer begin
+[2024-11-11 11:00:24.891] [INFO] stability/criterion/stability: Criterion begin
+[2024-11-11 11:00:24.903] [INFO] stability/criterion/stability: Criterion end
+[2024-11-11 11:00:24.903] [INFO] stability/criterion/computer: CriterionComputer end
+[2024-11-11 11:00:24.903] [INFO] stability/criterion/stability: Criterion begin
+[2024-11-11 11:00:24.903] [INFO] stability/criterion/stability: Criterion end
+[2024-11-11 11:00:24.903] [INFO] data/api_server: send_draft_mark begin
+[2024-11-11 11:00:25.022] [INFO] data/api_server: send_draft_mark end
+[2024-11-11 11:00:25.022] [INFO] data/api_server: send_stability_data begin
+[2024-11-11 11:00:25.149] [INFO] data/api_server: send_stability_data end
+[2024-11-11 11:00:25.150] [INFO] data/api_server: send_parameters_data begin
+[2024-11-11 11:00:25.273] [INFO] data/api_server: send_parameters_data end
+[2024-11-11 11:00:25.273] [INFO] main: read data:	4.703554682s
+[2024-11-11 11:00:25.273] [INFO] main: calculate:	630.317355ms
+[2024-11-11 11:00:25.273] [INFO] main: reply: {"status":"ok","message":null}
+[2024-11-11 11:01:45.101] [INFO] main: starting up
+[2024-11-11 11:01:45.201] [INFO] args: read from stdin: {"api-address":{"host":"10.131.145.109","port":8080},"params":{"project-id":null,"ship-id":1}}
+[2024-11-11 11:01:45.201] [INFO] args: io::stdin(): Message { address: ApiAddress { host: "10.131.145.109", port: 8080 }, params: Params { ship_id: 1, project_id: None } }
+[2024-11-11 11:01:45.212] [INFO] main: args host:10.131.145.109 port:8080
+[2024-11-11 11:01:45.212] [INFO] data/api_server: input_api_server read begin
+[2024-11-11 11:01:49.930] [INFO] data/api_server: input_api_server read ok
+[2024-11-11 11:01:49.930] [INFO] data/structs/result: result parse begin
+[2024-11-11 11:01:49.933] [INFO] data/structs/result: result parse ok
+[2024-11-11 11:01:49.935] [INFO] data/structs/check_result: result check begin
+[2024-11-11 11:01:49.935] [INFO] data/structs/check_result: result check ok
+[2024-11-11 11:01:49.936] [INFO] data/structs/result: result check ok
+[2024-11-11 11:01:49.936] [INFO] strength/mass: 	 Mass ballast:0, stores:286.2546, bulkhead:0
+            cargo:0, deadweight:286.2546, lightship:2044.1000000000004,
+            icing:0, wetting:0 sum:2330.3546000000006
+[2024-11-11 11:01:49.936] [INFO] strength/mass: 	 Mass values:[185.6748848949311, 312.9851924207509, 234.26238934882107, 83.38382259069215, 72.48436350748834, 72.49186071627264, 72.81498348421793, 72.814983484218, 72.8149834842179, 72.8149834842179, 72.814983484218, 72.81498348421782, 72.814983484218, 72.81498348421788, 75.33611376318315, 97.07947438982278, 141.93145040750068, 203.49367677739008, 172.13685402536785, 96.57464928403576] 
+[2024-11-11 11:01:49.951] [INFO] data/api_server: send_strenght_data begin
+[2024-11-11 11:01:50.067] [INFO] data/api_server: send_strenght_data end
+[2024-11-11 11:01:50.081] [INFO] data/api_server: send_stability_diagram begin
+[2024-11-11 11:01:50.198] [INFO] data/api_server: send_stability_diagram end
+[2024-11-11 11:01:50.198] [INFO] stability/criterion/computer: CriterionComputer begin
+[2024-11-11 11:01:50.198] [INFO] stability/criterion/stability: Criterion begin
+[2024-11-11 11:01:50.206] [INFO] stability/criterion/stability: Criterion end
+[2024-11-11 11:01:50.206] [INFO] stability/criterion/computer: CriterionComputer end
+[2024-11-11 11:01:50.206] [INFO] stability/criterion/stability: Criterion begin
+[2024-11-11 11:01:50.206] [INFO] stability/criterion/stability: Criterion end
+[2024-11-11 11:01:50.206] [INFO] data/api_server: send_draft_mark begin
+[2024-11-11 11:01:50.316] [INFO] data/api_server: send_draft_mark end
+[2024-11-11 11:01:50.317] [INFO] data/api_server: send_stability_data begin
+[2024-11-11 11:01:50.443] [INFO] data/api_server: send_stability_data end
+[2024-11-11 11:01:50.443] [INFO] data/api_server: send_parameters_data begin
+[2024-11-11 11:01:50.561] [INFO] data/api_server: send_parameters_data end
+[2024-11-11 11:01:50.561] [INFO] main: calculate:	625.423906ms
+[2024-11-11 11:01:50.561] [INFO] main: read data:	4.724001983s
+[2024-11-11 11:01:50.561] [INFO] main: reply: {"status":"ok","message":null}

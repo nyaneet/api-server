@@ -22,11 +22,14 @@ services:
     build: ./api-server
     ports:
       - 8080:8080
+    volumes:
+      - /home/konstantin/code/rust-proj/sss-computing-strength/target/debug/sss-computing-strength:/package/sss-computing-strength
+      - ./log.txt:/package/log.txt
     networks:
       - api-server
 
-  client:
-    build: ./client
-    environment:
-      DISPLAY: ${DISPLAY}
-    network_mode: host
+  # client:
+  #   build: ./client
+  #   environment:
+  #     DISPLAY: ${DISPLAY}
+  #   network_mode: host
