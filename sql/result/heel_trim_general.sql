@@ -12,24 +12,35 @@ CREATE VIEW heel_trim_general AS SELECT
     heel.value AS "heel",
     trim.value AS "trim"
 FROM (
-    SELECT ship_id, result AS "value" FROM parameter_data WHERE parameter_id = 4
+    SELECT ship_id, project_id, result AS "value" FROM parameter_data WHERE parameter_id = 4
 ) AS draft_fp
 FULL OUTER JOIN (
-    SELECT ship_id, result AS "value" FROM parameter_data WHERE parameter_id = 3
-) AS draft_avg ON draft_fp.ship_id = draft_avg.ship_id
+    SELECT ship_id, project_id, result AS "value" FROM parameter_data WHERE parameter_id = 3
+) AS draft_avg ON
+    draft_fp.ship_id = draft_avg.ship_id AND
+    draft_fp.project_id IS NOT DISTINCT FROM draft_avg.project_id
 FULL OUTER JOIN (
-    SELECT ship_id, result AS "value" FROM parameter_data WHERE parameter_id = 32
-) AS draft_avg_shift ON draft_fp.ship_id = draft_avg_shift.ship_id
+    SELECT ship_id, project_id, result AS "value" FROM parameter_data WHERE parameter_id = 32
+) AS draft_avg_shift ON
+    draft_fp.ship_id = draft_avg_shift.ship_id AND
+    draft_fp.project_id IS NOT DISTINCT FROM draft_avg_shift.project_id
 FULL OUTER JOIN (
-    SELECT ship_id, result AS "value" FROM parameter_data WHERE parameter_id = 5
-) AS draft_ap ON draft_fp.ship_id = draft_ap.ship_id
+    SELECT ship_id, project_id, result AS "value" FROM parameter_data WHERE parameter_id = 5
+) AS draft_ap ON
+    draft_fp.ship_id = draft_ap.ship_id AND
+    draft_fp.project_id IS NOT DISTINCT FROM draft_ap.project_id
 FULL OUTER JOIN (
-    SELECT ship_id, value::REAL AS "value" FROM ship_parameters WHERE key = 'LBP'
-) AS lbp ON draft_fp.ship_id = lbp.ship_id
+    SELECT ship_id, project_id, value::REAL AS "value" FROM ship_parameters WHERE key = 'LBP'
+) AS lbp ON
+    draft_fp.ship_id = lbp.ship_id AND
+    draft_fp.project_id IS NOT DISTINCT FROM lbp.project_id
 FULL OUTER JOIN (
-    SELECT ship_id, result AS "value" FROM parameter_data WHERE parameter_id = 7
-) AS heel ON draft_fp.ship_id = heel.ship_id
+    SELECT ship_id, project_id, result AS "value" FROM parameter_data WHERE parameter_id = 7
+) AS heel ON
+    draft_fp.ship_id = heel.ship_id AND
+    draft_fp.project_id IS NOT DISTINCT FROM heel.project_id
 FULL OUTER JOIN (
-    SELECT ship_id, result AS "value" FROM parameter_data WHERE parameter_id = 6
-) AS trim ON draft_fp.ship_id = trim.ship_id
-WHERE draft_fp.ship_id = 1 LIMIT 1;
+    SELECT ship_id, project_id, result AS "value" FROM parameter_data WHERE parameter_id = 6
+) AS trim ON
+    draft_fp.ship_id = trim.ship_id AND
+    draft_fp.project_id IS NOT DISTINCT FROM trim.project_id;
