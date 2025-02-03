@@ -192,3 +192,6 @@ DROP TABLE IF EXISTS ship_geometry, ship_parameters, ship CASCADE;
 --
 -- Initial non-deletable database checkpoint for Sofia vessel
 \i ./sql/Sofia/db_checkpoint/insert.sql
+--
+-- Initial content of database
+\i ./sql/init_data.sql
