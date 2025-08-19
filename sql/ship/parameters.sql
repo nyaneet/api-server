@@ -7,10 +7,12 @@ CREATE TABLE if not exists ship_parameters (
   key TEXT NOT NULL,
   value FLOAT8 NOT NULL,
   unit_id INT,
+  ship_max_speed FLOAT NOT NULL,
   CONSTRAINT ship_parameters_pk PRIMARY KEY (id),
   CONSTRAINT ship_parameters_ship_fk FOREIGN KEY (ship_id) REFERENCES ship (id),
   CONSTRAINT ship_parameters_unique UNIQUE NULLS NOT DISTINCT (project_id, ship_id, key),
   CONSTRAINT ship_parameters_key_check CHECK(char_length(key) > 0 AND char_length(key) <= 50),
-  CONSTRAINT ship_parameters_unit_fk FOREIGN KEY (unit_id) REFERENCES unit (id)
+  CONSTRAINT ship_parameters_unit_fk FOREIGN KEY (unit_id) REFERENCES unit (id),
+  CONSTRAINT ship_parameters_ship_max_speed CHECK (ship_max_speed > 0)
 );
 
