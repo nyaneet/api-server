@@ -1,4 +1,8 @@
-CREATE TYPE IF NOT EXISTS zone_type AS ENUM ('Parametric', 'Main', 'Broaching', 'HighWaves');
+DROP TABLE IF EXISTS seakeeping_zones CASCADE;
+
+DROP TYPE IF EXISTS zone_type CASCADE;
+
+CREATE TYPE zone_type AS ENUM ('Parametric', 'Main', 'Broaching', 'HighWaves');
 
 CREATE TABLE IF NOT EXISTS seakeeping_zones (
     id SERIAL PRIMARY KEY,
