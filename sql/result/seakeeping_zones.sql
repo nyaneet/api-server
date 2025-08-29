@@ -10,6 +10,6 @@ CREATE TABLE IF NOT EXISTS seakeeping_zones (
     angle FLOAT NOT NULL,
     speed FLOAT NOT NULL,
     zone_id zone_type NOT NULL,
-    CONSTRAINT criterion_values_criterions_id_unique UNIQUE NULLS NOT DISTINCT (project_id, ship_id),
+    CONSTRAINT criterion_values_criterions_id_unique UNIQUE NULLS NOT DISTINCT (ship_id),
     CONSTRAINT unique_angle_speed_zone UNIQUE (angle, speed, zone_id)
 );
