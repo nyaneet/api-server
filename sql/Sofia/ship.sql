@@ -26,6 +26,7 @@ VALUES
   (2, 'Keel area', 0, 3),
   (2, 'L.O.A', 138.86, 2),
   (2, 'LBP', 130.5, 2),
+  (2, 'MaxSpeed', 14.7, 2),
   (2, 'MouldedBreadth', 15.87, 2),
   (2, 'Moulded depth', 11.15, 2),
   (2, 'X midship from Fr0', 0, 2),
