@@ -23,6 +23,7 @@ INSERT INTO ship_parameters
 VALUES
   (1, 'Keel area', 24.69, 3),
   (1, 'L.O.A', 119.95, 2),
+  (1, 'MaxSpeed', 10.4, 2),
   (1, 'LBP', 118.388, 2),
   (1, 'MouldedBreadth', 13.4, 2),
   (1, 'Moulded depth', 6.8, 2),
