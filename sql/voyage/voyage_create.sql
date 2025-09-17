@@ -11,6 +11,8 @@ CREATE TABLE IF NOT EXISTS voyage (
     density FLOAT8 NOT NULL DEFAULT 1.025, -- Seawater density t/m^3
     operational_speed FLOAT8 NOT NULL, -- Operational speed, knot
     wetting_timber FLOAT8 NOT NULL DEFAULT 10, -- Wetting of deck timber, %
+    wave_length FLOAT8 NOT NULL DEFAULT 56.16, -- Length of the wave, m
+    course_angle FLOAT8 NOT NULL DEFAULT 270.0, -- Angle of the vessel course, degree
     icing_type_id INT NOT NULL DEFAULT 1,
     icing_timber_type_id INT NOT NULL DEFAULT 1,
     water_area_id INT NOT NULL DEFAULT 1,
