@@ -25,7 +25,6 @@ VALUES
   (1, 'L.O.A', 119.95, 2),
   (1, 'MaxSpeed', 10.4, 2),
   (1, 'LBP', 118.388, 2),
-  (1, 'MaxSpeed', 20.0, 2),
   (1, 'MouldedBreadth', 13.4, 2),
   (1, 'Moulded depth', 6.8, 2),
   (1, 'X midship from Fr0', 59.194, 2),
