@@ -95,8 +95,6 @@ DROP TABLE IF EXISTS ship_geometry, ship_parameters, ship CASCADE;
 \i ./sql/result/draft_mark.sql
 \i ./sql/result/load_line.sql
 \i ./sql/result/screw.sql
--- Tables of Seakeeping
-\i ./sql/result/seakeeping_zones.sql
 
 --
 --triggers
