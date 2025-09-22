@@ -25,7 +25,7 @@ services:
       args:
         - GITHUB_TOKEN=$GITHUB_TOKEN
         - API_SERVER_TAG=internal_v0.2.1
-        - SSS_COMPUTING_STRENGTH_TAG=0.0.47
+        - SSS_COMPUTING_STRENGTH_TAG=1.1.0.2-Seakeeping
     ports:
       - 8080:8080
     networks:
