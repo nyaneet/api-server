@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS voyage (
     wave_length FLOAT8 NOT NULL DEFAULT 56.16, -- Length of wave, m
     course_angle FLOAT8 NOT NULL DEFAULT 270.0, -- Angle of vessel course in northeastern coordinate's, degrees
     wave_heading_angle FLOAT8 NOT NULL DEFAULT 315.0, -- Wave heading angle in northeastern coordinate's, degrees
-    current_speed FLOAT8 NOT NULL DEFAULT 15.0, -- Current speed of vessel, m
+    current_speed FLOAT8 NOT NULL DEFAULT 14.7, -- Current speed of vessel, m
     CONSTRAINT voyage_pk PRIMARY KEY (id),
     CONSTRAINT voyage_name_check CHECK(char_length(name) > 0 AND char_length(name) <= 250),
     CONSTRAINT voyage_description_check CHECK(char_length(description) <= 1000),
