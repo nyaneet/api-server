@@ -1,4 +1,4 @@
-FROM rust:1.80.1 as builder
+FROM rust:1.80.1 AS builder
 RUN apt update
 # compile the api-server binary executable
 WORKDIR /app
@@ -10,9 +10,11 @@ WORKDIR /back
 ARG GITHUB_TOKEN
 ARG SSS_COMPUTING_STRENGTH_TAG
 RUN git clone --depth 1 --branch ${SSS_COMPUTING_STRENGTH_TAG} https://oauth2:${GITHUB_TOKEN}@github.com/a-givertzman/sss-computing-strength.git sss-computing-strength
+RUN sed 's/"localhost".to_owned(),/message.address.host.to_owned(),/g' ./sss-computing-strength/src/main.rs
+RUN sed 's/"8080".to_string(),/message.address.port.to_string(),/g' ./sss-computing-strength/src/main.rs
 RUN cd ./sss-computing-strength && cargo build --release
 
-FROM debian:12.2 as runner
+FROM debian:12.2 AS runner
 WORKDIR /package
 COPY --from=builder /app/api-server/target/release/api-server ./
 COPY --from=builder /back/sss-computing-strength/target/release/sss-computing-strength ./

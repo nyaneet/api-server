@@ -25,20 +25,21 @@ services:
       args:
         - GITHUB_TOKEN=$GITHUB_TOKEN
         - API_SERVER_TAG=internal_v0.2.1
+        # - SSS_COMPUTING_STRENGTH_TAG=1.1.0-Sofia
         - SSS_COMPUTING_STRENGTH_TAG=1.1.0.2-Seakeeping
     ports:
       - 8080:8080
     networks:
       - api-server
 
-  # client:
-  #   build:
-  #     context: ./client
-  #     args:
-  #       - GITHUB_TOKEN=$GITHUB_TOKEN
-  #       - SSS_COMPUTING_CLIENT_TAG=0.0.24
-  #   deploy:
-  #     replicas: 0
-  #   environment:
-  #     DISPLAY: ${DISPLAY}
-  #   network_mode: host
+  client:
+    build:
+      context: ./client
+      args:
+        - GITHUB_TOKEN=$GITHUB_TOKEN
+        - SSS_COMPUTING_CLIENT_TAG=1.0.1-Seakeeping
+    deploy:
+      replicas: 0
+    environment:
+      DISPLAY: ${DISPLAY}
+    network_mode: host

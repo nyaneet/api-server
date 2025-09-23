@@ -1,0 +1,7 @@
+{
+    "seakeeping-parametric-roll-resonance-color" : "#D7090C", 
+    "seakeeping-roll-resonance-color" : "#9D1732",
+    "seakeeping-wave-riding-color" : "#EDB01D",
+    "seakeeping-high-wave-attack-color" : "#DE501D",
+    "seakeeping-heading-rectangle-color": "#2c139b"
+}

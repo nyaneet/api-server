@@ -26,9 +26,18 @@ sudo rm -rf ./postgres
 docker compose up --build --no-deps --force-recreate
 ```
 
-## Database, api-server and GUI (Temporally disabled)
+## Database, api-server and GUI
 
-It is also possible to run app with GUI by replacing the commands above with:
+### Prerequisites:
+On Linux, ensure that XServer and Xhost installed and run the following command to give docker access to graphics server:
+
+```bash
+xhost + local:docker
+```
+
+### Instructions:
+
+It is also possible to run app with GUI by replacing the docker commands (from "Database with api-server only" section) with:
 
 ```bash
 docker compose up --scale client=1
@@ -36,13 +45,6 @@ docker compose up --scale client=1
 or
 ```bash
 docker compose up --scale client=1 --build --no-deps --force-recreate
-```
-
-### Prerequisites
-On Linux, ensure that XServer and Xhost installed and run the following command to give docker access to graphics server:
-
-```bash
-xhost + local:docker
 ```
 
 ## Connecting to a psql DB session
