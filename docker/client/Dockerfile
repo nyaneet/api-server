@@ -10,5 +10,5 @@ FROM debian:12.2 AS runner
 WORKDIR /runner
 RUN apt update && apt install -y libgtk-3-dev
 # COPY --from=builder /app/sss-computing-client/build/linux/x64/release/bundle ./
-COPY ./bundle ./
-CMD ./boardtrix
+ADD bundle.tar.xz ./
+CMD ["./boardtrix"]
