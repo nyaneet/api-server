@@ -1,10 +1,12 @@
-FROM fischerscode/flutter-sudo:3.24.3 as builder
+FROM fischerscode/flutter-sudo:3.24.3 AS builder
 WORKDIR /app
 RUN sudo apt update && sudo apt install -y clang cmake git ninja-build pkg-config libgtk-3-dev liblzma-dev libstdc++-12-dev
-RUN git clone --depth 1 --branch 0.0.24 https://github.com/a-givertzman/sss-computing-client sss-computing-client
+ARG GITHUB_TOKEN
+ARG SSS_COMPUTING_CLIENT_TAG
+RUN git clone --depth 1 --branch ${SSS_COMPUTING_CLIENT_TAG} https://oauth2:${GITHUB_TOKEN}@github.com/a-givertzman/sss-computing-client sss-computing-client
 RUN cd ./sss-computing-client && flutter build linux --release
 
-FROM debian:12.2 as runner
+FROM debian:12.2 AS runner
 WORKDIR /runner
 RUN apt update && apt install -y libgtk-3-dev
 COPY --from=builder /app/sss-computing-client/build/linux/x64/release/bundle ./
