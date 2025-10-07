@@ -44,4 +44,4 @@ VALUES
   (2, 'Maximum aft trim', -0.6525, 2),
   (2, 'Maximum forward trim', 0.6525, 2),
   (2, 'DWT', 10890, 6),
-  (2, 'Alowance for fresh water for freeboard', 0.177, 2);
+  (2, 'Allowance for fresh water for freeboard', 0.177, 2);
