@@ -21,13 +21,7 @@ INSERT INTO ship_available_load_line_types
 VALUES
     -- Summer
     (2, NULL, 1, TRUE),
-    -- Fresh water in summer
-    (2, NULL, 5, FALSE),
     -- Tropical
     (2, NULL, 4, FALSE),
-    -- Tropical fresh water
-    (2, NULL, 6, FALSE),
     -- Winter
-    (2, NULL, 2, FALSE),
-    -- Winter North Atlantic
-    (2, NULL, 3, FALSE);
+    (2, NULL, 2, FALSE);
