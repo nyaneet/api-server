@@ -26,7 +26,7 @@ sudo rm -rf ./postgres
 docker compose up --build --no-deps --force-recreate
 ```
 
-## Database, api-server and GUI
+## Database, api-server and GUI (temporarily disabled)
 
 ### Prerequisites:
 On Linux, ensure that XServer and Xhost installed and run the following command to give docker access to graphics server:

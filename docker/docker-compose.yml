@@ -31,14 +31,14 @@ services:
     networks:
       - api-server
 
-  client:
-    build:
-      context: ./client
-      args:
-        - GITHUB_TOKEN=$GITHUB_TOKEN
-        - SSS_COMPUTING_CLIENT_TAG=1.0.1
-    deploy:
-      replicas: 0
-    environment:
-      DISPLAY: ${DISPLAY}
-    network_mode: host
+  # client:
+  #   build:
+  #     context: ./client
+  #     args:
+  #       - GITHUB_TOKEN=$GITHUB_TOKEN
+  #       - SSS_COMPUTING_CLIENT_TAG=1.0.1
+  #   deploy:
+  #     replicas: 0
+  #   environment:
+  #     DISPLAY: ${DISPLAY}
+  #   network_mode: host
