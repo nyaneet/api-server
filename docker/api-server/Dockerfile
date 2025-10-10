@@ -1,4 +1,4 @@
-FROM rust:1.80.1 as builder
+FROM rust:1.86.0 as builder
 RUN apt update
 # compile the api-server binary executable
 WORKDIR /app
