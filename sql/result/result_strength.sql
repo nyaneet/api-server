@@ -33,3 +33,5 @@ CREATE TABLE
         CONSTRAINT result_strength_pk PRIMARY KEY (id),
         CONSTRAINT result_strength_index_unique UNIQUE NULLS NOT DISTINCT (project_id, ship_id, index)
     );
+
+COMMENT ON TABLE result_strength IS 'start_x, end_x corresponds to the values ​​in table computed_frame_space';
