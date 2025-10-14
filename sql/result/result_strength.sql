@@ -30,8 +30,7 @@ CREATE TABLE
         limit_high_bending_moment FLOAT8 NOT NULL,
         percent_bending_moment FLOAT8 NOT NULL,
         status_bending_moment BOOLEAN NOT NULL,
-        CONSTRAINT result_strength_pk PRIMARY KEY (id),
-        CONSTRAINT result_strength_index_unique UNIQUE NULLS NOT DISTINCT (project_id, ship_id, index)
+        CONSTRAINT result_strength_pk PRIMARY KEY (id)
     );
 
 COMMENT ON TABLE result_strength IS 'start_x, end_x corresponds to the values ​​in table computed_frame_space';
