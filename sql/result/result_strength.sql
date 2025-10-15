@@ -43,7 +43,7 @@ CREATE TABLE
         limit_high_bending_moment FLOAT8 NOT NULL,
         percent_bending_moment FLOAT8 NOT NULL,
         status_bending_moment BOOLEAN NOT NULL,
-        CONSTRAINT result_strength_values_pk PRIMARY KEY (id)
+        CONSTRAINT rresult_strength_force_and_moment_pk PRIMARY KEY (id)
     );
 
 COMMENT ON TABLE result_strength_force_and_moment IS 'frame_x corresponds to the values in table computed_frame_space';
