@@ -33,6 +33,43 @@ sudo rm -rf ./postgres
 docker compose up --build --no-deps --force-recreate
 ```
 
+## Database, api-server and map tileserver:
+
+### Prerequisites:
+
+Run the following command from `./docker` directory to download map tiles:
+
+```bash
+mkdir ./tilesets
+wget https://ftp.gwdg.de/pub/misc/openstreetmap/openandromaps/world/OAM-World-1-8-min-J80.zip
+unzip OAM-World-1-8-min-J80.zip -d ./tilesets
+rm OAM-World-1-8-min-J80.zip
+```
+
+### Running
+
+
+```bash
+docker compose up --scale tileserver=1
+```
+or
+```bash
+docker compose up --scale tileserver=1 --build --no-deps --force-recreate
+```
+
+### Usage
+On Linux, ensure that XServer and Xhost installed and run the following command to give docker access to graphics server:
+
+Tiles are provided at:
+```
+<host>:<port>/services/<tileset_id>/tiles/{z}/{x}/{y}.<format>
+```
+From host machine:
+```
+http://localhost:8082/services/OAM-World-1-8-min-J80/tiles/{z}/{x}/{y}.jpg
+```
+
+
 ## Database, api-server and GUI (Temporally disabled)
 
 It is also possible to run app with GUI by replacing the commands above with:
