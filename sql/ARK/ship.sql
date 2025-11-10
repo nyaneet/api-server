@@ -40,7 +40,7 @@ VALUES
   (1, 'Calculated minimum bow height', 4.113, 2),
   (1, 'Calculated minimum bow area', 84, 3),
   (1, 'Maximum aft trim', -1.7, 2),
-  (1, 'Maximum forward trim', 0.7, 2),
-  (1, 'DWT', 4886.4, 6);
+  (1, 'DWT', 4886.4, 6),
+  (1, 'Allowance for fresh water for freeboard', 0.177, 2);
 
 
