@@ -58,7 +58,6 @@ docker compose up --scale tileserver=1 --build --no-deps --force-recreate
 ```
 
 ### Usage
-On Linux, ensure that XServer and Xhost installed and run the following command to give docker access to graphics server:
 
 Tiles are provided at:
 ```
