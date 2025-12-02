@@ -7,8 +7,6 @@ CREATE TABLE
         project_id INT, -- ID of the project
         ship_id INT NOT NULL, -- ID of the ship
         port_id INT, -- ID of the port
-        port_name TEXT NOT NULL, -- Name of the port (or port city)
-        port_code TEXT NOT NULL, -- Code of the port
         eta TIMESTAMP NOT NULL, -- ETA of the waypoint (elapsed time of arrival)
         etd TIMESTAMP NOT NULL, -- ETD of the waypoint (elapsed time of departure)
         hex_color TEXT NOT NULL, -- Color to identify waypoint when displaying, in hex color format
