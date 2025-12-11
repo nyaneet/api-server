@@ -140,6 +140,8 @@ CREATE TABLE if not exists cargo (
   vertical_area_shift_y FLOAT8,
   vertical_area_shift_z FLOAT8,
   category_id INT NOT NULL, -- ID of the cargo_category entry;
+  shape_id INT, -- ID of the shape entry;
+  space_id INT, -- ID of the space entry;
   CONSTRAINT cargo_pk PRIMARY KEY (id),
   --CONSTRAINT cargo_name_unique UNIQUE NULLS NOT DISTINCT (project_id, ship_id, name),
   CONSTRAINT cargo_name_check CHECK(char_length(name) <= 50),
@@ -157,5 +159,7 @@ CREATE TABLE if not exists cargo (
   CONSTRAINT cargo_mass_shift_z_check CHECK(mass_shift_z IS NULL OR bound_z1 IS NULL OR (mass_shift_z >= bound_z1 AND mass_shift_z <= bound_z2)),
   CONSTRAINT cargo_horizontal_area_shift_z_check CHECK(horizontal_area_shift_z IS NULL OR bound_z1 IS NULL OR (horizontal_area_shift_z >= bound_z1 AND horizontal_area_shift_z <= bound_z2)),
   CONSTRAINT cargo_vertical_area_shift_z_check CHECK(vertical_area_shift_z IS NULL OR bound_z1 IS NULL OR (vertical_area_shift_z >= bound_z1 AND vertical_area_shift_z <= bound_z2)),
-  CONSTRAINT cargo_category_fk FOREIGN KEY (category_id) REFERENCES cargo_category (id)
+  CONSTRAINT cargo_category_fk FOREIGN KEY (category_id) REFERENCES cargo_category (id),
+  CONSTRAINT cargo_shape_fk FOREIGN KEY (shape_id) REFERENCES shape (id),
+  CONSTRAINT cargo_space_fk FOREIGN KEY (space_id) REFERENCES space (id)
 );
