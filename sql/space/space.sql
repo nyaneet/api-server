@@ -37,19 +37,6 @@ INSERT INTO space (
 (
     2,
     NULL,
-    '00-0',
-    'Судно внешнее',
-    'Ship Bounding',
-    -10.0,
-    140.0,
-    -8.0,
-    8.0,
-    0.0,
-    28.0
-),
-(
-    2,
-    NULL,
     '11R.1',
     'Жилой блок',
     'Accommodation',
@@ -63,7 +50,7 @@ INSERT INTO space (
 (
     2,
     NULL,
-    '10Y-1',
+    '10Y.1',
     'Палубная погрузочная зона',
     'Deck loading zone',
     -10.0,
