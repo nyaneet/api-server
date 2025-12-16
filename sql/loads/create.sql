@@ -122,8 +122,8 @@ CREATE TABLE if not exists cargo (
   mass FLOAT8,
   timber BOOLEAN NOT NULL DEFAULT FALSE,
   is_on_deck BOOLEAN NOT NULL DEFAULT FALSE, -- Indicator of whether the cargo is on deck or not, true - yes, false - no
-  bound_x1 FLOAT8 NOT NULL,
-  bound_x2 FLOAT8 NOT NULL,
+  bound_x1 FLOAT8,
+  bound_x2 FLOAT8,
   bound_y1 FLOAT8,
   bound_y2 FLOAT8,
   bound_z1 FLOAT8,
@@ -131,6 +131,9 @@ CREATE TABLE if not exists cargo (
   mass_shift_x FLOAT8,
   mass_shift_y FLOAT8,
   mass_shift_z FLOAT8,
+  mass_shift_x_local FLOAT8 NOT NULL, -- Longitudinal center of gravity in local coordinate system of this cargo;
+  mass_shift_y_local FLOAT8 NOT NULL, -- Transverse center of gravity in local coordinate system of this cargo;
+  mass_shift_z_local FLOAT8 NOT NULL, -- Vertical center of gravity in local coordinate system of this cargo;
   horizontal_area FLOAT8,
   horizontal_area_shift_x FLOAT8,
   horizontal_area_shift_y FLOAT8,
@@ -148,7 +151,8 @@ CREATE TABLE if not exists cargo (
   CONSTRAINT cargo_mass_check CHECK(mass IS NULL OR mass >= 0),
   CONSTRAINT cargo_horizontal_area_check CHECK(horizontal_area IS NULL OR horizontal_area >= 0),
   CONSTRAINT cargo_vertical_area_check CHECK(vertical_area IS NULL OR vertical_area >= 0),
-  CONSTRAINT cargo_bound_x_check CHECK(bound_x1 < bound_x2), 
+  CONSTRAINT cargo_bound_x_check CHECK(bound_x1 IS NULL OR (bound_x1 < bound_x2)), 
+  CONSTRAINT cargo_mass_shift_x_check CHECK(mass_shift_x IS NULL OR bound_x1 IS NULL OR (mass_shift_x >= bound_x1 AND mass_shift_x <= bound_x2)),
   CONSTRAINT cargo_horizontal_area_shift_x_check CHECK(horizontal_area_shift_x IS NULL OR (horizontal_area_shift_x >= bound_x1 AND horizontal_area_shift_x <= bound_x2)),
   CONSTRAINT cargo_vertical_area_shift_x_check CHECK(vertical_area_shift_x IS NULL OR (vertical_area_shift_x >= bound_x1 AND vertical_area_shift_x <= bound_x2)),
   CONSTRAINT cargo_bound_y_check CHECK(bound_y1 IS NULL OR (bound_y1 < bound_y2)), 
@@ -159,6 +163,17 @@ CREATE TABLE if not exists cargo (
   CONSTRAINT cargo_mass_shift_z_check CHECK(mass_shift_z IS NULL OR bound_z1 IS NULL OR (mass_shift_z >= bound_z1 AND mass_shift_z <= bound_z2)),
   CONSTRAINT cargo_horizontal_area_shift_z_check CHECK(horizontal_area_shift_z IS NULL OR bound_z1 IS NULL OR (horizontal_area_shift_z >= bound_z1 AND horizontal_area_shift_z <= bound_z2)),
   CONSTRAINT cargo_vertical_area_shift_z_check CHECK(vertical_area_shift_z IS NULL OR bound_z1 IS NULL OR (vertical_area_shift_z >= bound_z1 AND vertical_area_shift_z <= bound_z2)),
+  CONSTRAINT cargo_location_integrity_check CHECK (
+    (
+      (shape_id IS NOT NULL AND space_id IS NOT NULL) AND 
+      num_nulls(bound_x1, bound_x2, bound_y1, bound_y2, bound_z1, bound_z2, mass_shift_x, mass_shift_y, mass_shift_z) = 0
+    )
+    OR
+    (
+      (shape_id IS NULL OR space_id IS NULL) AND
+      num_nonnulls(bound_x1, bound_x2, bound_y1, bound_y2, bound_z1, bound_z2, mass_shift_x, mass_shift_y, mass_shift_z) = 0
+    )
+), -- TODO(nyaneet): remove storage of calculated fields from the database
   CONSTRAINT cargo_category_fk FOREIGN KEY (category_id) REFERENCES cargo_category (id),
   CONSTRAINT cargo_shape_fk FOREIGN KEY (shape_id) REFERENCES shape (id),
   CONSTRAINT cargo_space_fk FOREIGN KEY (space_id) REFERENCES space (id)
