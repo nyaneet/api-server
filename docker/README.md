@@ -71,7 +71,16 @@ http://localhost:8082/services/OAM-World-1-8-min-J80/tiles/{z}/{x}/{y}.jpg
 
 ## Database, api-server and GUI (Temporally disabled)
 
-It is also possible to run app with GUI by replacing the commands above with:
+### Prerequisites:
+On Linux, ensure that XServer and Xhost installed and run the following command to give docker access to graphics server:
+
+```bash
+xhost + local:docker
+```
+
+### Instructions:
+
+It is also possible to run app with GUI by replacing the docker commands (from "Database with api-server only" section) with:
 
 ```bash
 docker compose up --scale client=1
@@ -79,13 +88,6 @@ docker compose up --scale client=1
 or
 ```bash
 docker compose up --scale client=1 --build --no-deps --force-recreate
-```
-
-### Prerequisites
-On Linux, ensure that XServer and Xhost installed and run the following command to give docker access to graphics server:
-
-```bash
-xhost + local:docker
 ```
 
 ## Connecting to a psql DB session

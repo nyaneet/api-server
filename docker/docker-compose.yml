@@ -3,8 +3,8 @@ networks:
 
 services:
   db:
-    image: postgres:17.2
     restart: unless-stopped
+    image: postgres:17.2
     environment:
       - POSTGRES_USER=test
       - POSTGRES_PASSWORD=test
@@ -19,10 +19,13 @@ services:
       - api-server
 
   api:
+    restart: unless-stopped
     build:
       context: ./api-server
       args:
         - GITHUB_TOKEN=$GITHUB_TOKEN
+        - API_SERVER_TAG=internal_v0.2.1
+        - SSS_COMPUTING_STRENGTH_TAG=1.1.6-Sofia
     ports:
       - 8080:8080
     networks:
@@ -47,6 +50,7 @@ services:
   #     context: ./client
   #     args:
   #       - GITHUB_TOKEN=$GITHUB_TOKEN
+  #       - SSS_COMPUTING_CLIENT_TAG=1.0.1
   #   deploy:
   #     replicas: 0
   #   environment:

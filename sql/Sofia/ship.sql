@@ -26,6 +26,7 @@ VALUES
   (2, 'Keel area', 0, 3),
   (2, 'L.O.A', 138.86, 2),
   (2, 'LBP', 130.5, 2),
+  (2, 'MaxSpeed', 14.7, 2),
   (2, 'MouldedBreadth', 15.87, 2),
   (2, 'Moulded depth', 11.15, 2),
   (2, 'X midship from Fr0', 0, 2),
@@ -43,4 +44,5 @@ VALUES
   (2, 'Calculated minimum bow area', 82, 3),
   (2, 'Maximum aft trim', -0.6525, 2),
   (2, 'Maximum forward trim', 0.6525, 2),
-  (2, 'DWT', 10890, 6);
+  (2, 'DWT', 10890, 6),
+  (2, 'Allowance for fresh water for freeboard', 0.177, 2);
