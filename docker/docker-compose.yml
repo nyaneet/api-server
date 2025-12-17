@@ -31,6 +31,20 @@ services:
     networks:
       - api-server
 
+  tileserver:
+    deploy:
+      replicas: 0
+    image: ghcr.io/consbio/mbtileserver:latest
+    restart: unless-stopped
+    environment:
+      - PORT=8000
+    volumes:
+      - ./tilesets:/tilesets:ro
+    ports:
+      - 8082:8000
+    networks:
+      - api-server
+
   # client:
   #   build:
   #     context: ./client
