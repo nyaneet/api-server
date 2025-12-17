@@ -1,6 +1,9 @@
 import pandas as pd
+import re
+from googletrans import Translator
 
 ports = pd.read_csv('ports_data.csv', delimiter=',')
+translator = Translator()
 
 with open('insert_ports.sql', 'w', encoding='utf-8') as sql_file:
     sql_file.write("INSERT INTO\n")
@@ -9,36 +12,60 @@ with open('insert_ports.sql', 'w', encoding='utf-8') as sql_file:
     
     ports_data = []
     for index, row in ports.iterrows():
-
+        
+        # 1. forming latitude and longitude
         latitude = float(row['Latitude'])
         longitude = float(row['Longitude'])
-        is_eurasia = (10 <= latitude <= 80) and (-20 <= longitude <= 180)
-        is_north_africa = (20 <= latitude <= 35) and (20 <= longitude <= 40)
-        if not (is_eurasia or is_north_africa):
-            continue
 
-        port_name_ru = "-" 
-        port_name_en_raw = str(row['Region Name'])
-        if '--' in port_name_en_raw:
-            port_name_en = port_name_en_raw.split('--')[0].strip()
+        # 2.1 forming the name of the region
+        region_name = row['Region Name']
+        if pd.isna(region_name):
+            region_name = '-'
         else:
-            port_name_en = port_name_en_raw.strip()
-        port_name_en = port_name_en if port_name_en else "-"
+            region_name = str(region_name)
+            if '--' in region_name:
+                region_name = region_name.split('--')[0].strip()
+            else:
+                region_name = region_name.strip()
+            region_name = region_name if region_name else "-"
 
-        main_port_name = str(row['Main Port Name']).strip()
-        alternate_port_name = str(row['Alternate Port Name']).strip()
+        # 2.2 forming the name of the port (main or alternate name)
+        main_port_name = row['Main Port Name']
+        if not pd.isna(main_port_name):
+            main_port_name = str(main_port_name).strip()
+        else:
+            alternate_port_name = row['Alternate Port Name']
+            if not pd.isna(alternate_port_name):
+                alternate_port_name = str(alternate_port_name).strip()
+
+        # 2.3 forming a joint port name (region_name + main/alternate_port_name)
         if main_port_name:
-            port_name_en = f"{port_name_en}, {main_port_name}"
+            port_name_en = f"{region_name}, {main_port_name}"
         elif alternate_port_name:
-            port_name_en = f"{port_name_en}, {alternate_port_name}"
-        else: port_name_en = f"{port_name_en}, -"
-        port_name_en = port_name_en.replace("'", "''") 
+            port_name_en = f"{region_name}, {alternate_port_name}"
+        else: port_name_en = f"{region_name}, -"
+        port_name_en = port_name_en.replace("'", "''")
 
-        port_code = str(row['UN/LOCODE']).strip()
-        if not port_code or port_code == 'nan':
+        # 2.4 forming a joint ru port name (translation of port_name_en)
+        if port_name_en and port_name_en != "-":
+            try:
+                translated = translator.translate(port_name_en, src='en', dest='ru').text
+                port_name_ru = translated
+            except Exception as e:
+                print(f"Ошибка перевода для '{port_name_en}': {e}")
+                port_name_ru = port_name_en
+        else:
+            port_name_ru = "-"
+        port_name_ru = port_name_ru.replace("'", "''")
+
+        # 3. forming port code
+        port_code = row['UN/LOCODE']
+        if pd.isna(port_code):
             port_code = '-'
         else:
-            port_code = port_code.replace(' ', '').replace('"', '')
+            port_code = str(port_code).strip()
+            port_code = re.sub(r'[^a-zA-Zа-яА-ЯёЁ]', '', port_code)
+            port_code = port_code if port_code else '-'
         
         port = f"    ('{port_name_ru}','{port_name_en}','{port_code}',{latitude},{longitude})"
         ports_data.append(port)
