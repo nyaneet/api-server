@@ -2,3 +2,4 @@
 .env
 # container's volume
 postgres/
+tilesets/
