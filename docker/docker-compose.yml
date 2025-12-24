@@ -25,9 +25,23 @@ services:
       args:
         - GITHUB_TOKEN=$GITHUB_TOKEN
         - API_SERVER_TAG=internal_v0.2.1
-        - SSS_COMPUTING_STRENGTH_TAG=1.1.0.2-Seakeeping
+        - SSS_COMPUTING_STRENGTH_TAG=1.1.6-Sofia
     ports:
       - 8080:8080
+    networks:
+      - api-server
+
+  tileserver:
+    deploy:
+      replicas: 0
+    image: ghcr.io/consbio/mbtileserver:latest
+    restart: unless-stopped
+    environment:
+      - PORT=8000
+    volumes:
+      - ./tilesets:/tilesets:ro
+    ports:
+      - 8082:8000
     networks:
       - api-server
 
@@ -36,7 +50,7 @@ services:
   #     context: ./client
   #     args:
   #       - GITHUB_TOKEN=$GITHUB_TOKEN
-  #       - SSS_COMPUTING_CLIENT_TAG=0.0.24
+  #       - SSS_COMPUTING_CLIENT_TAG=1.0.1
   #   deploy:
   #     replicas: 0
   #   environment:
