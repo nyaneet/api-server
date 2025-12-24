@@ -14,6 +14,7 @@ CREATE TABLE IF NOT EXISTS space (
     bound_y2 FLOAT8 NOT NULL,
     bound_z1 FLOAT8 NOT NULL,
     bound_z2 FLOAT8 NOT NULL,
+    is_deck BOOLEAN NOT NULL DEFAULT FALSE, -- Indicator of whether this space is deck or not
     CONSTRAINT space_pk PRIMARY KEY (id),
     CONSTRAINT space_bounds_x_check CHECK (bound_x1 <= bound_x2),
     CONSTRAINT space_bounds_y_check CHECK (bound_y1 <= bound_y2),
@@ -32,7 +33,8 @@ INSERT INTO space (
     bound_y1,
     bound_y2,
     bound_z1,
-    bound_z2
+    bound_z2,
+    is_deck
 ) VALUES
 (
     2,
@@ -45,7 +47,8 @@ INSERT INTO space (
     -6.6,
     6.6,
     12.38,
-    14.95
+    14.95,
+    FALSE
 ),
 (
     2,
@@ -53,10 +56,11 @@ INSERT INTO space (
     '10Y.1',
     'Палубная погрузочная зона',
     'Deck loading zone',
-    -10.0,
-    140.0,
+    19.0,
+    120.0,
     -8.0,
     8.0,
-    28.0,
-    28.0
+    12.38,
+    20.0,
+    TRUE
 );

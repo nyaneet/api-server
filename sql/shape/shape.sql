@@ -32,44 +32,44 @@ CREATE TABLE IF NOT EXISTS shape_parameter (
     CONSTRAINT shape_parameter_unique UNIQUE(shape_id, name)
 );
 
--- Test examples:
--- cuboid
-WITH new_shape_id AS (
-    INSERT INTO shape (type) VALUES ('cuboid')
-    RETURNING id
-)
-INSERT INTO shape_parameter (shape_id, name, value) VALUES
-((SELECT id FROM new_shape_id), 'xSize', 8.0),
-((SELECT id FROM new_shape_id), 'ySize', 4.0),
-((SELECT id FROM new_shape_id), 'zSize', 2.0);
--- sphere
-WITH new_shape_id AS (
-    INSERT INTO shape (type) VALUES ('sphere')
-    RETURNING id
-)
-INSERT INTO shape_parameter (shape_id, name, value) VALUES
-((SELECT id FROM new_shape_id), 'radius', 5.0);
--- cylinder longitudinal
-WITH new_shape_id AS (
-    INSERT INTO shape (type) VALUES ('cylinder_longitudinal')
-    RETURNING id
-)
-INSERT INTO shape_parameter (shape_id, name, value) VALUES
-((SELECT id FROM new_shape_id), 'length', 8.0),
-((SELECT id FROM new_shape_id), 'radius', 4.0);
--- cylinder transverse
-WITH new_shape_id AS (
-    INSERT INTO shape (type) VALUES ('cylinder_transverse')
-    RETURNING id
-)
-INSERT INTO shape_parameter (shape_id, name, value) VALUES
-((SELECT id FROM new_shape_id), 'length', 8.0),
-((SELECT id FROM new_shape_id), 'radius', 4.0);
--- cylinder vertical
-WITH new_shape_id AS (
-    INSERT INTO shape (type) VALUES ('cylinder_vertical')
-    RETURNING id
-)
-INSERT INTO shape_parameter (shape_id, name, value) VALUES
-((SELECT id FROM new_shape_id), 'length', 8.0),
-((SELECT id FROM new_shape_id), 'radius', 4.0);
+-- -- Test examples:
+-- -- cuboid
+-- WITH new_shape_id AS (
+--     INSERT INTO shape (type) VALUES ('cuboid')
+--     RETURNING id
+-- )
+-- INSERT INTO shape_parameter (shape_id, name, value) VALUES
+-- ((SELECT id FROM new_shape_id), 'xSize', 8.0),
+-- ((SELECT id FROM new_shape_id), 'ySize', 4.0),
+-- ((SELECT id FROM new_shape_id), 'zSize', 2.0);
+-- -- sphere
+-- WITH new_shape_id AS (
+--     INSERT INTO shape (type) VALUES ('sphere')
+--     RETURNING id
+-- )
+-- INSERT INTO shape_parameter (shape_id, name, value) VALUES
+-- ((SELECT id FROM new_shape_id), 'radius', 5.0);
+-- -- cylinder longitudinal
+-- WITH new_shape_id AS (
+--     INSERT INTO shape (type) VALUES ('cylinder_longitudinal')
+--     RETURNING id
+-- )
+-- INSERT INTO shape_parameter (shape_id, name, value) VALUES
+-- ((SELECT id FROM new_shape_id), 'length', 8.0),
+-- ((SELECT id FROM new_shape_id), 'radius', 4.0);
+-- -- cylinder transverse
+-- WITH new_shape_id AS (
+--     INSERT INTO shape (type) VALUES ('cylinder_transverse')
+--     RETURNING id
+-- )
+-- INSERT INTO shape_parameter (shape_id, name, value) VALUES
+-- ((SELECT id FROM new_shape_id), 'length', 8.0),
+-- ((SELECT id FROM new_shape_id), 'radius', 4.0);
+-- -- cylinder vertical
+-- WITH new_shape_id AS (
+--     INSERT INTO shape (type) VALUES ('cylinder_vertical')
+--     RETURNING id
+-- )
+-- INSERT INTO shape_parameter (shape_id, name, value) VALUES
+-- ((SELECT id FROM new_shape_id), 'length', 8.0),
+-- ((SELECT id FROM new_shape_id), 'radius', 4.0);
