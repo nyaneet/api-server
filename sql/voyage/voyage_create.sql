@@ -27,8 +27,8 @@ CREATE TABLE IF NOT EXISTS voyage (
     CONSTRAINT voyage_type_icing_timber_type_fk FOREIGN KEY (icing_timber_type_id) REFERENCES ship_icing_timber (id),
     CONSTRAINT voyage_type_water_area_type_fk FOREIGN KEY (water_area_id) REFERENCES ship_water_area (id),
     CONSTRAINT voyage_load_line_type_fk FOREIGN KEY (load_line_id) REFERENCES load_line_type (id),
-    CONSTRAINT wave_length_check CHECK (wave_length >= 1.6 AND wave_length <= 351.0),
+    CONSTRAINT wave_length_check CHECK (wave_length >= 1.56 AND wave_length <= 351.0),
     CONSTRAINT course_angle_check CHECK (course_angle >= 0.0 AND course_angle <= 360.0),
     CONSTRAINT wave_heading_angle_check CHECK (wave_heading_angle >= 0.0 AND wave_heading_angle <= 360.0),
-    CONSTRAINT current_speed_check CHECK (current_speed >= 1.0 AND current_speed <= 15.0)
+    CONSTRAINT current_speed_check CHECK (current_speed >= 1.0)
 );
