@@ -1,0 +1,86 @@
+DELETE FROM space WHERE ship_id=2;
+
+INSERT INTO space (
+    ship_id,
+    project_id,
+    space_code,
+    name_rus,
+    name_engl,
+    bound_x1,
+    bound_x2,
+    bound_y1,
+    bound_y2,
+    bound_z1,
+    bound_z2,
+    is_deck
+) VALUES
+(
+    2,
+    NULL,
+    '1001',
+    'Трюм 1',
+    'Hold 1',
+    18.970,
+    70.770,
+    -6.600,
+    6.600,
+    1.100,
+    11.700,
+    FALSE
+),
+(
+    2,
+    NULL,
+    '1002',
+    'Трюм 2',
+    'Hold 2',
+    73.710,
+    112.190,
+    -6.600,
+    6.600,
+    1.100,
+    11.700,
+    FALSE
+),
+(
+    2,
+    NULL,
+    '10Y.1',
+    'Палубная погрузочная зона 1',
+    'Deck loading zone 1',
+    11.250,
+    18.250,
+    -6.600,
+    6.600,
+    11.950,
+    22.550,
+    TRUE
+),
+(
+    2,
+    NULL,
+    '10Y.2',
+    'Палубная погрузочная зона 2',
+    'Deck loading zone 2',
+    18.970,
+    70.770,
+    -6.600,
+    6.600,
+    12.560,
+    23.160,
+    TRUE
+),
+(
+    2,
+    NULL,
+    '10Y.3',
+    'Палубная погрузочная зона 3',
+    'Deck loading zone 3',
+    73.710,
+    112.190,
+    -6.600,
+    6.600,
+    12.560,
+    23.160,
+    TRUE
+);
