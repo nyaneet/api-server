@@ -58,6 +58,8 @@ DROP TABLE IF EXISTS ship_geometry, ship_parameters, ship CASCADE;
 \i ./sql/voyage/voyage_waypoint_create.sql
 --
 -- Compartment and cargo relations
+\i ./sql/space/space.sql
+\i ./sql/shape/shape.sql
 \i ./sql/cargo_categories/cargo_categories.sql
 \i ./sql/loads/create.sql
 \i ./sql/loads/grain_moment.sql
@@ -185,6 +187,7 @@ DROP TABLE IF EXISTS ship_geometry, ship_parameters, ship CASCADE;
 \i ./sql/Sofia/loads/load_base.sql
 \i ./sql/Sofia/loads/hull.sql
 \i ./sql/Sofia/loads/compartment_curve.sql
+\i ./sql/Sofia/loads/cargo_general.sql
 \i ./sql/Sofia/voyage/voyage_insert.sql
 \i ./sql/Sofia/container/container_insert.sql
 --\i ./sql/Sofia/test/SSS_Sofia_test6.sql
