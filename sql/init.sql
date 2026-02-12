@@ -54,6 +54,8 @@ DROP TABLE IF EXISTS ship_geometry, ship_parameters, ship CASCADE;
 \i ./sql/voyage/icing_timber.sql
 \i ./sql/voyage/icing.sql
 \i ./sql/voyage/ship_water_area.sql
+\i ./sql/voyage/port_create.sql
+\i ./sql/voyage/port_insert.sql
 \i ./sql/voyage/voyage_create.sql
 \i ./sql/voyage/voyage_waypoint_create.sql
 --
@@ -107,45 +109,44 @@ DROP TABLE IF EXISTS ship_geometry, ship_parameters, ship CASCADE;
 --\i ./sql/triggers/volume.sql
 \i ./sql/triggers/water_density.sql
 --
--- -- Data for ARK
--- \i ./sql/ARK/ship.sql
--- \i ./sql/ARK/strength_force_limit.sql
--- \i ./sql/ARK/hidrostatic/center_draught.sql
--- \i ./sql/ARK/hidrostatic/center_waterline.sql
--- \i ./sql/ARK/hidrostatic/mean_draught.sql
--- \i ./sql/ARK/hidrostatic/pantocaren.sql
--- \i ./sql/ARK/hidrostatic/rad_trans.sql
--- \i ./sql/ARK/hidrostatic/rad_long.sql
--- \i ./sql/ARK/hidrostatic/flooding_angle.sql
--- \i ./sql/ARK/hidrostatic/entry_angle.sql
--- \i ./sql/ARK/hidrostatic/volume_shift.sql
--- \i ./sql/ARK/hidrostatic/waterline_breadth.sql
--- \i ./sql/ARK/hidrostatic/waterline_length.sql
--- \i ./sql/ARK/hidrostatic/waterline_area.sql
--- \i ./sql/ARK/hidrostatic/min_metacentric_height_subdivision.sql
--- \i ./sql/ARK/hidrostatic/metacentic_height_limits.sql
--- \i ./sql/ARK/frames/bonjean_frame.sql
--- \i ./sql/ARK/frames/physical_frame.sql
--- \i ./sql/ARK/frames/frame_area.sql
--- \i ./sql/ARK/loads/load_base.sql
--- \i ./sql/ARK/loads/hull.sql
--- \i ./sql/ARK/loads/compartment_curve.sql
--- \i ./sql/ARK/loads/grain_moment.sql
--- \i ./sql/ARK/loads/protocol_66.sql
--- \i ./sql/ARK/area/horizontal_area_strength.sql
--- \i ./sql/ARK/area/horizontal_area_stability.sql
--- \i ./sql/ARK/area/vertical_area_strength.sql
--- \i ./sql/ARK/area/vertical_area_stability.sql
--- \i ./sql/ARK/area/bow_area.sql
--- \i ./sql/ARK/draft/draft_mark.sql
--- \i ./sql/ARK/draft/load_line.sql
--- \i ./sql/ARK/draft/screw.sql
--- \i ./sql/ARK/draft/bow_board.sql
--- \i ./sql/ARK/hold/hold_insert_empty.sql
--- \i ./sql/voyage/voyage_waypoint_insert_test.sql -- for test, TODO: remove
--- \i ./sql/ARK/voyage/voyage_insert.sql
--- \i ./sql/ARK/container/container_insert.sql -- same as above
--- \i ./sql/ARK/container/container_slot_insert.sql
+-- Data for ARK
+\i ./sql/ARK/ship.sql
+\i ./sql/ARK/strength_force_limit.sql
+\i ./sql/ARK/hidrostatic/center_draught.sql
+\i ./sql/ARK/hidrostatic/center_waterline.sql
+\i ./sql/ARK/hidrostatic/mean_draught.sql
+\i ./sql/ARK/hidrostatic/pantocaren.sql
+\i ./sql/ARK/hidrostatic/rad_trans.sql
+\i ./sql/ARK/hidrostatic/rad_long.sql
+\i ./sql/ARK/hidrostatic/flooding_angle.sql
+\i ./sql/ARK/hidrostatic/entry_angle.sql
+\i ./sql/ARK/hidrostatic/volume_shift.sql
+\i ./sql/ARK/hidrostatic/waterline_breadth.sql
+\i ./sql/ARK/hidrostatic/waterline_length.sql
+\i ./sql/ARK/hidrostatic/waterline_area.sql
+\i ./sql/ARK/hidrostatic/min_metacentric_height_subdivision.sql
+\i ./sql/ARK/hidrostatic/metacentic_height_limits.sql
+\i ./sql/ARK/frames/bonjean_frame.sql
+\i ./sql/ARK/frames/physical_frame.sql
+\i ./sql/ARK/frames/frame_area.sql
+\i ./sql/ARK/loads/load_base.sql
+\i ./sql/ARK/loads/hull.sql
+\i ./sql/ARK/loads/compartment_curve.sql
+\i ./sql/ARK/loads/grain_moment.sql
+\i ./sql/ARK/loads/protocol_66.sql
+\i ./sql/ARK/area/horizontal_area_strength.sql
+\i ./sql/ARK/area/horizontal_area_stability.sql
+\i ./sql/ARK/area/vertical_area_strength.sql
+\i ./sql/ARK/area/vertical_area_stability.sql
+\i ./sql/ARK/area/bow_area.sql
+\i ./sql/ARK/draft/draft_mark.sql
+\i ./sql/ARK/draft/load_line.sql
+\i ./sql/ARK/draft/screw.sql
+\i ./sql/ARK/draft/bow_board.sql
+\i ./sql/ARK/hold/hold_insert_empty.sql
+\i ./sql/ARK/voyage/voyage_insert.sql
+\i ./sql/ARK/container/container_insert.sql -- same as above
+\i ./sql/ARK/container/container_slot_insert.sql
 --
 -- Data for Sofia
 \i ./sql/Sofia/ship.sql
@@ -191,7 +192,6 @@ DROP TABLE IF EXISTS ship_geometry, ship_parameters, ship CASCADE;
 \i ./sql/Sofia/loads/cargo_general.sql
 \i ./sql/Sofia/voyage/voyage_insert.sql
 \i ./sql/Sofia/container/container_insert.sql
-\i ./sql/voyage/port_create.sql
 --
 -- Utility relations for storing database checkpoints
 \i ./sql/db_checkpoint/db_checkpoint_create.sql
