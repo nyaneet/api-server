@@ -200,3 +200,6 @@ DROP TABLE IF EXISTS ship_geometry, ship_parameters, ship CASCADE;
 --
 -- Initial ports data (moved to the bottom because after updating file something gone wrong)
 \i ./sql/voyage/port_create.sql
+--
+-- Initial route points data
+\i ./sql/voyage/route_point_create.sql
